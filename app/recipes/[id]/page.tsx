@@ -20,7 +20,6 @@ export default function RecipeDetailPage() {
   const [recipe, setRecipe] = useState<Recipe | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const router = useRouter();
   const params = useParams();
   const { id } = params;
 
@@ -36,7 +35,7 @@ export default function RecipeDetailPage() {
         if (error) throw error;
         setRecipe(data ? { ...data, Profile: Array.isArray(data.Profile) ? data.Profile[0] : data.Profile } : null);
         setHasError(false);
-      } catch (e) {
+      } catch {
         setHasError(true);
       } finally {
         setIsLoading(false);

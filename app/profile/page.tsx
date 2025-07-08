@@ -40,7 +40,7 @@ export default function ProfilePage() {
         setUserName(data.user_name || "");
         setFullName(data.full_name || "");
         setHasError(false);
-      } catch (e) {
+      } catch {
         setHasError(true);
       } finally {
         setIsLoading(false);
@@ -61,7 +61,7 @@ export default function ProfilePage() {
         .eq("id", profile?.id);
       if (error) throw error;
       setSuccess(true);
-    } catch (e) {
+    } catch {
       setHasError(true);
     } finally {
       setIsSaving(false);

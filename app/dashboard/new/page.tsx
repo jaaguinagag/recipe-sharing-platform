@@ -63,8 +63,8 @@ export default function NewRecipePage() {
       if (error) throw error;
       setSuccess(true);
       setTimeout(() => router.push("/dashboard"), 1000);
-    } catch (e: any) {
-      setError(e.message || "Failed to create recipe.");
+    } catch (e) {
+      setError((e as Error).message || "Failed to create recipe.");
     } finally {
       setIsLoading(false);
     }

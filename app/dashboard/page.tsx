@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabase-client";
-import { Card } from "../../components/card";
 import { Skeleton } from "../../components/skeleton";
 
 interface Recipe {
@@ -40,7 +39,7 @@ export default function DashboardPage() {
         if (error) throw error;
         setRecipes((data || []).map(r => ({ ...r, Profile: Array.isArray(r.Profile) ? r.Profile[0] : r.Profile })));
         setHasError(false);
-      } catch (e) {
+      } catch {
         setHasError(true);
       } finally {
         setIsLoading(false);
