@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { supabase } from "../../../lib/supabase-client";
 import { Skeleton } from "../../../components/skeleton";
 
